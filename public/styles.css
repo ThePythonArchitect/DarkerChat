@@ -1,0 +1,150 @@
+/*
+Used to set root font size.
+Responsive media queries require this!
+*/
+html {
+	font-size: 14px;
+}
+
+.body {
+	color: white;
+	background-color: #222;
+}
+
+.topbar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	background-color: #077;
+}
+
+.popupTopbar {
+	background-color: #077;
+}
+
+.button {
+	background-color: #077;
+	border: 1px solid black;
+}
+
+.sidebar {
+	display: none;
+	width: 25%;
+	background-color: #333;
+}
+
+/* important is used to override some hover functionality */
+.navElement {
+	color: white !important;
+	background-color: #333 !important;
+}
+
+.navSubElement {
+	color: white;
+	background-color: #444;
+}
+
+.receivedMessage {
+	background-color: #404;
+}
+
+.sentMessage {
+	background-color: #064;
+}
+
+.usernameTag {
+	color: #999;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: #222;
+	padding: 12px;
+	border-top: 1px solid black;
+}
+
+.inputField {
+	color: white;
+	background-color: #111;
+	width: 100%;
+}
+
+.scrollable {
+	overflow: auto;
+	padding-top: 100px;
+	padding-bottom: 60px;
+}
+
+/* Scrollbar stuff */
+/* width */
+::-webkit-scrollbar {
+  width: 14px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #555; 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa; 
+}
+
+/* Responsiveness */
+
+.small {
+	font-size: 0.9rem;
+}
+
+.medium {
+	font-size: 1.0rem;
+}
+
+.large {
+	font-size: 1.3rem;
+}
+
+.xlarge {
+	font-size: 1.8rem;
+}
+
+/* Smart phone screen */
+@media screen
+	and (hover: none)
+	and (max-device-width: 600px) {
+	html {
+		font-size: 46px !important;
+	}
+	.sidebar {
+		width: 65%;
+	}
+
+	.scrollable {
+		padding-top: 250px;
+		padding-bottom: 160px;
+	}
+
+	.footer {
+		padding: 24px;
+	}
+}
+
+/* Tablets */
+@media screen
+	and (hover: none)
+	and (min-device-width: 1000px) {
+	html {
+		font-size: 36px !important;
+	}
+	.sidebar {
+		width: 50%;
+	}
+}
+

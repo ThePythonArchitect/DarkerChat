@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Darker Chat App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="body">
+
+<!-- Side bar -->
+<nav id="sidebar" class="w3-sidebar w3-bar-block sidebar">
+	<button onclick="toggleSidebar()" class="w3-bar-item w3-button navElement xlarge w3-hover-black">Close &times</button>
+
+<!--
+	<div class="w3-dropdown-click">
+		<button onclick="toggleDropdown('dropdown1')" class="w3-button w3-hover-black navElement">Dropdown 1</button>
+		<div id="dropdown1" class="w3-dropdown-content">
+			<button class="w3-bar-item w3-button navSubElement w3-hover-black" onclick="">Option 1</button>
+			<button class="w3-bar-item w3-button navSubElement w3-hover-black" onclick="">Option 2</button>
+		</div>
+	</div>
+-->
+
+	<div class="w3-dropdown-click">
+		<button onclick="createChatroom();" class="w3-button w3-hover-black navElement medium">Create Chat Room</button>
+	</div>
+	<div class="w3-dropdown-click">
+		<button onclick="joinChatroom();" class="w3-button w3-hover-black navElement medium">Join Chat Room</button>
+	</div>
+	<div class="w3-dropdown-click">
+		<button onclick="leaveChatroom();" class="w3-button w3-hover-black navElement medium">Leave Chat Room</button>
+	</div>
+	
+</nav>
+
+<!-- Top bar -->
+<div class="topbar">
+	<button class="w3-button xlarge" onclick="toggleSidebar()">☰</button>
+	<label class="w3-right w3-padding xlarge">Darker Chat App</label>
+	<br>
+	<label id="chatroomNameDisplayer" class="medium w3-right w3-padding">Chatroom: None</label>
+</div>
+
+<!-- Main page content -->
+<main>
+<div id="scrollable" class="scrollable medium">
+</div>
+
+</main>
+
+<!-- Footer: could probably use a row-column grid here? -->
+<div class="footer w3-row w3-container medium">
+	<div class="w3-col s9 m10 l10" style="margin-top: 3px;">
+		<input id="textinput" class="inputField" type="text">
+	</div>
+	<div class="w3-col s3 m2 l2 w3-center">
+		<button onclick="send();" class="button w3-button medium">Send</button>
+	</div>
+</div>
+
+<!-- Pop up Menu -->
+
+<div id="popup" class="w3-modal" style="display: none;">
+	<div class="w3-modal-content body medium">
+		<header class="w3-container popupTopbar">
+			<span onclick="closePopup();"
+	  		class="w3-button w3-display-topright">&times;</span>
+	  		<h2 class="large" id="popupName">Join Chatroom</h2>
+  		</header>
+		<form class="w3-container">
+			<div id="popupResultsDiv" style="display: none;">
+				<br>
+				<label id="popupResultsLabel" style="color: red;">This shouldn't be showing?</label>
+			</div>
+			<br>
+			<label>Your Name</label>
+			<input id="username" class="w3-input inputField medium" type="text" placeholder="Enter your name">
+			<br>
+			<label>Chatroom Name</label>
+			<input id="chatroomName" class="w3-input inputField medium" type="text" placeholder="Enter room name">
+			<br>
+			<label>Password</label>
+			<input id="chatroomPassword" class="w3-input inputField medium" type="text" placeholder="Enter password (if applicable)">
+			<br>
+			<button id="popupButton" class="w3-button w3-right button medium" type="button">Submit</button>
+			<br>
+		</form>
+	</div>
+</div>
+
+</body>
+<!-- Simple button clicking logic to change styles -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="guiHelper.js"></script>
+<!-- Used to talk to the server -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="network.js"></script>
+</html>

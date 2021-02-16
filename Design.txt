@@ -1,0 +1,22 @@
+Chat App
+
+Database
+	#id
+	username
+	password hash
+	email
+	#chatroom_id
+	chatroom password
+
+Backend
+	Handles chatroom hosting
+	Handles user logins / logouts
+	Handles chatroom logins / logouts
+	Facilitates communication between connected clients
+	Keeps track of which users are in what chatrooms
+
+Frontend
+	Allows login / password reset
+	Shows create / join chatroom
+	Shows messages
+	
